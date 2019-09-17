@@ -47,6 +47,7 @@ public class Basics {
       count++;
       now = LocalDateTime.now();
       int secondNew = now.getSecond();
+
       if(secondOld != secondNew){
         secondOld = secondNew;
         time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
