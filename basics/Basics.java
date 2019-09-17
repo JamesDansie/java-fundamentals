@@ -29,6 +29,7 @@ public class Basics {
         heads++;
       } else {
         System.out.println("Tails");
+        heads = 0;
       }
       count++;
     }
@@ -67,7 +68,7 @@ public class Basics {
     int turtleCount = 0;
     System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
 
-    flipNHeads(1);
+    flipNHeads(2);
 
     clock();
 
