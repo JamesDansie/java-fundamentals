@@ -10,6 +10,7 @@ public class Library {
         return true;
     }
 
+//    from; https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java
     public static int randomInt(int min, int max) {
         Random random = new Random();
         int randomInt = random.nextInt((max - min) + 1) + min;
@@ -19,7 +20,7 @@ public class Library {
     public static int[] roll(int rollsNum){
         int[] rollsArr = new int[rollsNum];
         for(int i = 0; i < rollsArr.length; i++){
-            rollsArr[i] = randomInt(0,6);
+            rollsArr[i] = randomInt(1,6);
         }
         return rollsArr;
     }
@@ -48,6 +49,7 @@ public class Library {
         return (total/((float)arrIn.length));
     }
 
+    //I didn't read the instructions, this is extra.
     public static float[] arrAvgLots(int[][] arrIn){
         float[] arrOut = new float[arrIn.length];
 
@@ -56,5 +58,19 @@ public class Library {
         }
 
         return arrOut;
+    }
+
+    //This is the correct one.
+    public static int[] arrAvgLow(int[][] arrIn){
+        int lowIndex = 0;
+        float lowAvg = arrAvg(arrIn[0]);
+
+        for(int i = 0; i < arrIn.length; i++){
+            if(lowAvg > arrAvg(arrIn[i])){
+                lowIndex = i;
+            }
+        }
+
+        return arrIn[lowIndex];
     }
 }

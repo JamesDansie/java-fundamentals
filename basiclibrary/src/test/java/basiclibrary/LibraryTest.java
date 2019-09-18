@@ -81,4 +81,17 @@ public class LibraryTest {
                 0.05f
         );
     }
+
+    @Test public void arrAvgLowest(){
+        int[][] testArr = {
+                {1, 2, 1, 2, 1, 2, 1, 2},
+                {3, 4, 3, 4},
+                {5, 6, 5, 6, 5, 6}
+        };
+        assertArrayEquals(
+                "Should return [1, 2, 1, 2, 1, 2, 1, 2]",
+                new int[]{1, 2, 1, 2, 1, 2, 1, 2},
+                Library.arrAvgLow(testArr)
+        );
+    }
 }
