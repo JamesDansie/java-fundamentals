@@ -39,18 +39,18 @@ public class LibraryTest {
     @Test public void arrAvg(){
         assertEquals(
                 "The average should be 2",
-                2.0,
+                2.0f,
                 Library.arrAvg(new int[]{1, 2, 3}),
-                0.1
+                0.05f
         );
     }
 
     @Test public void arrNotAvg(){
         assertNotEquals(
                 "The average should be 2, but is not",
-                3,
-                (int)Library.arrAvg(new int[]{1, 2, 3}
-                )
+                3.0f,
+                Library.arrAvg(new int[]{1, 2, 3}),
+                        0.05f
         );
     }
 
