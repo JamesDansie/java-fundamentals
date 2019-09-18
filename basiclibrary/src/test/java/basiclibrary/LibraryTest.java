@@ -67,4 +67,18 @@ public class LibraryTest {
                 0.05f
         );
     }
+
+    @Test public void arrArrDifflength(){
+        int[][] testArr = {
+                {1, 2, 1, 2, 1, 2, 1, 2},
+                {3, 4, 3, 4},
+                {5, 6, 5, 6, 5, 6}
+        };
+        assertArrayEquals(
+                "Should return an array of [1.5, 3.5, 5.5]",
+                new float[]{1.5f, 3.5f, 5.5f},
+                Library.arrAvgLots(testArr),
+                0.05f
+        );
+    }
 }
