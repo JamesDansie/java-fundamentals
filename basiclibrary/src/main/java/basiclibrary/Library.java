@@ -3,7 +3,7 @@
  */
 package basiclibrary;
 
-import java.util.Random;
+import java.util.*;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -72,5 +72,57 @@ public class Library {
         }
 
         return arrIn[lowIndex];
+    }
+
+    public static String weather(int [][] arrIn){
+        HashSet<Integer> hs = new HashSet<>();
+        int min = arrIn[0][0];
+        int max = arrIn[0][0];
+
+        for(int i = 0; i < arrIn.length; i++){
+            for(int j = 0; j < arrIn[i].length; j++){
+                hs.add(arrIn[i][j]);
+                if(arrIn[i][j] < min){
+                    min = arrIn[i][j];
+                }
+                if(arrIn[i][j] > max){
+                    max = arrIn[i][j];
+                }
+            }
+        }
+        String output = String.format("High: %d\nLow: %d\n", max, min);
+        for(int j = min; j < max; j++){
+            if(!hs.contains(j)){
+                output += String.format("Never saw temperature: %d\n", j);
+            }
+        }
+
+        System.out.println(output);
+        return(output);
+    }
+
+    public static String tally(List<String> votes){
+        //to loop through a list; https://beginnersbook.com/2013/12/how-to-loop-arraylist-in-java/
+        HashMap<String, Integer> voteTally = new HashMap<>();
+
+        for(int i = 0; i < votes.size(); i++){
+//            System.out.println(votes.get(i));
+
+            // to increment a hash map; https://codereview.stackexchange.com/questions/57078/incrementing-integers-in-map
+            voteTally.merge(votes.get(i), 1, (oldValue, one) -> oldValue + one);
+        }
+
+        int max = 0;
+        String output = "";
+//        to loop through a hashmap; https://www.w3schools.com/java/java_hashmap.asp
+        for(String i: voteTally.keySet()){
+//            System.out.println("Key " + i + "value " + voteTally.get(i));
+            if(voteTally.get(i) > max){
+                max = voteTally.get(i);
+                output = i;
+            }
+        }
+
+        return output;
     }
 }
