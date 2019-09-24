@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.StringJoiner;
+
 public class Restaurant {
     double stars;
     String name;
@@ -19,7 +21,6 @@ public class Restaurant {
         Review data;
         Node next;
 
-        //Node constructor, only ints for now
         Node(Review data){
             this(data, null);
         }
@@ -61,8 +62,27 @@ public class Restaurant {
         updateStars();
     }
 
-
+    @Override
     public String toString(){
         return String.format("%s has %s stars and $%s price.",this.name, this.stars, this.price);
+    }
+
+    public String reviewsReturn(){
+        StringJoiner sj = new StringJoiner("\n");
+        //If there's not reviews then throw an error
+        if(head == null){
+            System.out.println("No reviews found");
+        } else {
+            Node currNode = this.head;
+
+            //For each review updates the count and adds to total.
+            while(currNode != null){
+                sj.add(currNode.data.toString());
+                currNode = currNode.next;
+            }
+
+            //Updates the stars with the average
+        }
+        return sj.toString();
     }
 }

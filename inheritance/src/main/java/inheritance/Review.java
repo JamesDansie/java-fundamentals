@@ -11,6 +11,7 @@ public class Review {
         this.stars = stars;
     }
 
+    @Override
     public String toString(){
         return String.format("%s had this to say: %s. Their review had %s stars.",
                 this.author, this.body, this.stars);
