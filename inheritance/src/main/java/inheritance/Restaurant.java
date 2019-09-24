@@ -44,7 +44,7 @@ public class Restaurant {
             Node currNode = this.head;
 
             //For each review updates the count and adds to total.
-            while(currNode.next != null){
+            while(currNode != null){
                 total += currNode.data.stars;
                 count++;
                 currNode = currNode.next;
