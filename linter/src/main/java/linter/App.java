@@ -51,7 +51,7 @@ public class App {
         System.out.println(new App().getGreeting());
         try {
             Scanner sc = new Scanner(new File("/Users/jamesdansie/codefellows/401/java-fundamentals/linter/src/main/resources/gates.js"));
-//            System.out.println(linter(sc));
+            System.out.println(linter(sc));
         } catch (FileNotFoundException e){
             System.out.println(("could not find file"));
         }
