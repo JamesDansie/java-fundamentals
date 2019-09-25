@@ -11,14 +11,21 @@ public class Theater extends Restaurant {
     }
 
     public void addMovie(String movie){
+        if(movies == null){
+            movies = new LinkedList<>();
+        }
         this.movies.add(movie);
     }
 
     public void removeMovie(String movie){
+        if(movies == null){
+            System.out.println("No movies left");
+        } else {
         this.movies.remove(movie);
+        }
     }
 
-    public String movieList(){
+    public String showMovieList(){
         return movies.toString();
     }
 
