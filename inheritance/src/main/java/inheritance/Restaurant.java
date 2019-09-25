@@ -32,9 +32,9 @@ public class Restaurant {
     }
 
     //adds a node at the beginning
-    private void insertHeadReview(Review data) {this.head = new Node(data, this.head);}
+    protected void insertHeadReview(Review data) {this.head = new Node(data, this.head);}
 
-    private void updateStars(){
+    protected void updateStars(){
         double total = 0;
         double count = 0;
 
