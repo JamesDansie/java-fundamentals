@@ -50,4 +50,9 @@ public class RestaurantTest {
                         "Pat had this to say: blah blah blah. Their review had 5 stars.",
                 noms.reviewsReturn());
     }
+
+    @Test
+    public void testHead(){
+        System.out.println(noms.head.data.toString());
+    }
 }
